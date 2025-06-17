@@ -1,15 +1,15 @@
 {
-    "name": "openapi-typescript-codegen",
-    "version": "0.29.0",
-    "description": "Library that generates Typescript clients based on the OpenAPI specification.",
-    "author": "Ferdi Koomen",
-    "homepage": "https://github.com/ferdikoomen/openapi-typescript-codegen",
+    "name": "bcgov-typescript-codegen",
+    "version": "1.0.0",
+    "description": "Library that generates Typescript clients based on the openapi-typescript-codegen.",
+    "author": "Ferdi Koomen, Craig Yu",
+    "homepage": "https://github.com/bcgov/typescript-codegen",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ferdikoomen/openapi-typescript-codegen.git"
+        "url": "git+https://github.com/bcgov/typescript-codegen.git"
     },
     "bugs": {
-        "url": "https://github.com/ferdikoomen/openapi-typescript-codegen/issues"
+        "url": "https://github.com/bcgov/typescript-codegen/issues"
     },
     "license": "MIT",
     "keywords": [
@@ -27,8 +27,8 @@
     ],
     "maintainers": [
         {
-            "name": "Ferdi Koomen",
-            "email": "info@madebyferdi.com"
+            "name": "Craig Yu",
+            "email": "craig.yu@gov.bc.ca"
         }
     ],
     "main": "dist/index.js",
@@ -67,17 +67,17 @@
         "handlebars": "^4.7.8"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "20.0.1",
-        "@angular/animations": "17.3.3",
-        "@angular/cli": "17.3.3",
-        "@angular/common": "17.3.3",
-        "@angular/compiler": "17.3.3",
-        "@angular/compiler-cli": "17.3.3",
-        "@angular/core": "17.3.3",
-        "@angular/forms": "17.3.3",
-        "@angular/platform-browser": "17.3.3",
-        "@angular/platform-browser-dynamic": "17.3.3",
-        "@angular/router": "17.3.3",
+        "@angular-devkit/build-angular": "^20.0.2",
+        "@angular/animations": "^20.0.3",
+        "@angular/cli": "^20.0.2",
+        "@angular/common": "^20.0.3",
+        "@angular/compiler": "^20.0.3",
+        "@angular/compiler-cli": "^20.0.3",
+        "@angular/core": "^20.0.3",
+        "@angular/forms": "^20.0.3",
+        "@angular/platform-browser": "^20.0.3",
+        "@angular/platform-browser-dynamic": "^20.0.3",
+        "@angular/router": "^20.0.3",
         "@babel/cli": "7.24.8",
         "@babel/core": "7.26.7",
         "@babel/preset-env": "7.27.2",
@@ -118,7 +118,7 @@
         "rxjs": "7.8.2",
         "ts-node": "10.9.2",
         "tslib": "2.6.3",
-        "typescript": "5.4.4",
+        "typescript": "5.8",
         "zone.js": "0.15.1"
     },
     "overrides": {
