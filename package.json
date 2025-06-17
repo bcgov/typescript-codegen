@@ -99,7 +99,7 @@
         "abort-controller": "3.0.0",
         "axios": "1.8.2",
         "codecov": "3.8.3",
-        "cross-spawn": "7.0.3",
+        "cross-spawn": "7.0.6",
         "eslint": "8.57.0",
         "eslint-config-prettier": "9.1.0",
         "eslint-plugin-prettier": "5.1.3",
