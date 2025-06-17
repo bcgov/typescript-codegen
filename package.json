@@ -1,6 +1,6 @@
 {
     "name": "bcgov-typescript-codegen",
-    "version": "1.0.0",
+    "version": "1.0.5",
     "description": "Library that generates Typescript clients based on the openapi-typescript-codegen.",
     "author": "Ferdi Koomen, Craig Yu",
     "homepage": "https://github.com/bcgov/typescript-codegen",

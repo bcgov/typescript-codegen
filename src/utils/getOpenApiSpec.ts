@@ -12,8 +12,7 @@ export const getOpenApiSpec = async (location: string): Promise<any> => {
     const isUrl = location.startsWith('http://') || location.startsWith('https://');
 
     if (isUrl) {
-        // Avoid resolving self-referencing $refs in URL-based specs
-        return await RefParser.parse(location);
+        return await RefParser.dereference(location);
     }
 
     const absolutePath = (await exists(location)) ? resolve(location) : location;
