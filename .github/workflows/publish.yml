@@ -1,0 +1,35 @@
+name: Publish to npm Registry
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run release
+
+      - name: Set version from latest git tag
+        run: |
+          VERSION=$(git describe --tags --abbrev=0)
+          echo "Setting version to $VERSION"
+          npm --no-git-tag-version version $VERSION
+
+      - name: Publish to npm
+        run: npm publish --access public
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
