@@ -4,12 +4,18 @@ import { resolve } from 'path';
 import { exists } from './fileSystem';
 
 /**
- * Load and parse te open api spec. If the file extension is ".yml" or ".yaml"
- * we will try to parse the file as a YAML spec, otherwise we will fall back
- * on parsing the file as JSON.
- * @param location: Path or url
+ * Load and parse the OpenAPI spec. If the location is a file path,
+ * we bundle it. If it's a URL, we just parse it to avoid ref resolution issues.
+ * @param location: Path or URL
  */
 export const getOpenApiSpec = async (location: string): Promise<any> => {
-    const absolutePathOrUrl = (await exists(location)) ? resolve(location) : location;
-    return await RefParser.bundle(absolutePathOrUrl, absolutePathOrUrl, {});
+    const isUrl = location.startsWith('http://') || location.startsWith('https://');
+
+    if (isUrl) {
+        // Avoid resolving self-referencing $refs in URL-based specs
+        return await RefParser.parse(location);
+    }
+
+    const absolutePath = (await exists(location)) ? resolve(location) : location;
+    return await RefParser.bundle(absolutePath);
 };
